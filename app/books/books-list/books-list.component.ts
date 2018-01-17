@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
 })
 
 export class BooksListComponent {
+    imageWidth: number = 100;
+    bookAuthor: string = "Tom Jones";
+    bookTitle: string = "War and Peace 2";
+    bookPrice: string = "$29.95";
+    bookDescription: string = "Book of fiction";
+    bookReviews: number = 15;
+    bookImageUrl:string = "app/assets/images/656.jpg"
 
 }
