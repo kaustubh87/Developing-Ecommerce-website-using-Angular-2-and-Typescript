@@ -15,7 +15,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'bs-app',
-        template: "\n  <h1>{{pageTitle}}</h1>\n  <div>App Component Test</div>\n  "
+        templateUrl: '../app/app.component.html'
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
