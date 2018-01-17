@@ -8,6 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var BooksListComponent = (function () {
     function BooksListComponent() {
+        this.imageWidth = 100;
+        this.bookAuthor = "Tom Jones";
+        this.bookTitle = "War and Peace 2";
+        this.bookPrice = "$29.95";
+        this.bookDescription = "Book of fiction";
+        this.bookReviews = 15;
+        this.bookImageUrl = "app/assets/images/656.jpg";
     }
     return BooksListComponent;
 }());
