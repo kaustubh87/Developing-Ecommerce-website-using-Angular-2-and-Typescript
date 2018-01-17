@@ -3,7 +3,8 @@
     <div class="row">
         <div class="col-md-4">
             <div class="thumbnail">
-              <img [src]="bookImageUrl" [style.width.px]="imageWidth">
+              <img [src]="bookImageUrl" [style.width.px]="imageWidth" *ngIf='showImage'>
+              <button class="btn btn-primary" (click)= "toggleImage()">Toggle Image</button>
               <div class="caption">
                 <h4 class="pull-right">
                   {{bookPrice}}
