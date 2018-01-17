@@ -14,8 +14,10 @@ var WelcomeComponent = (function () {
 }());
 WelcomeComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'bs-welcome',
-        templateUrl: '../../app/welcome/welcome.component.html'
+        templateUrl: '../../app/welcome/welcome.component.html',
+        styleUrls: ['../../app/welcome/welcome.component.css']
     })
 ], WelcomeComponent);
 exports.WelcomeComponent = WelcomeComponent;
