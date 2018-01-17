@@ -9,6 +9,7 @@ var core_1 = require("@angular/core");
 var BooksListComponent = (function () {
     function BooksListComponent() {
         this.imageWidth = 100;
+        this.showImage = true;
         this.bookAuthor = "Tom Jones";
         this.bookTitle = "War and Peace 2";
         this.bookPrice = "$29.95";
@@ -16,6 +17,9 @@ var BooksListComponent = (function () {
         this.bookReviews = 15;
         this.bookImageUrl = "app/assets/images/656.jpg";
     }
+    BooksListComponent.prototype.toggleImage = function () {
+        this.showImage = !this.showImage;
+    };
     return BooksListComponent;
 }());
 BooksListComponent = __decorate([
