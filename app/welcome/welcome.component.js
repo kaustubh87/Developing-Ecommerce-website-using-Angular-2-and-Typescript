@@ -6,20 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var welcome_component_1 = require("./welcome/welcome.component");
-var AppModule = (function () {
-    function AppModule() {
+var WelcomeComponent = (function () {
+    function WelcomeComponent() {
+        this.pageTitle = "Welcome";
     }
-    return AppModule;
+    return WelcomeComponent;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent],
-        bootstrap: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent]
+WelcomeComponent = __decorate([
+    core_1.Component({
+        selector: 'bs-welcome',
+        templateUrl: '../../app/welcome/welcome.component.html'
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], WelcomeComponent);
+exports.WelcomeComponent = WelcomeComponent;
+//# sourceMappingURL=welcome.component.js.map
