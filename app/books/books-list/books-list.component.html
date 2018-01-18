@@ -5,6 +5,7 @@
             <div class="thumbnail">
               <img [src]="book.bookImageUrl" [style.width.px]="imageWidth" *ngIf='showImage'>
               <button class="btn btn-primary" (click)= "toggleImage()">Toggle Image</button>
+              <div [ngClass]= "{'redClass': showImage, 'yellowClass': !showImage}">ngClass Test</div>
               <div class="caption">
                 <h4 class="pull-right">
                   {{book.bookPrice}}
