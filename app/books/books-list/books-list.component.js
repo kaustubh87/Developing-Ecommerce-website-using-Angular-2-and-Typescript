@@ -10,6 +10,7 @@ var BooksListComponent = (function () {
     function BooksListComponent() {
         this.imageWidth = 100;
         this.showImage = true;
+        this.booksInStock = 2;
         this.bookAuthor = "Tom Jones";
         this.bookTitle = "War and Peace 2";
         this.bookPrice = "$29.95";
