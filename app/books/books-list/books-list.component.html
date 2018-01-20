@@ -12,6 +12,7 @@
                 </h4>
                 <h4><a href="product.html">{{book.bookTitle}}</a></h4>
                 <p><b>Author: </b>{{book.bookAuthor}}</p>
+                <p><b>Description:</b> {{book.bookDescription | limitChar: '10'}}</p>
                 <p><b>Published on:</b> {{book.publishedOn | date: 'longDate'}}</p>
                 <p><b>In Stock:</b> {{book.inStock | uppercase}}</p>
                     <span class="glyphicon glyphicon-star"></span>
