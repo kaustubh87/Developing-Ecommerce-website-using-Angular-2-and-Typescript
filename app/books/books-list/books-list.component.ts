@@ -12,6 +12,7 @@ interface IBook {
     inStock: string;
     bookReviews:  number;
     bookImageUrl: string;
+    hardcover?:boolean;
 
 }
 
@@ -25,7 +26,8 @@ export class BooksListComponent {
     imageWidth: number = 100;
     showImage: boolean = true;
     booksInStock: number = 2;
-    books: any[]= [{
+
+    books: IBook[]= [{
     bookAuthor: "Tom Jones",
     bookTitle: "War and Peace 2",
     bookPrice: 29.95,
@@ -37,7 +39,6 @@ export class BooksListComponent {
     bookImageUrl: "app/assets/images/656.jpg"
     }]
     
-
     toggleImage(): void{
         this.showImage = !this.showImage;
     }
