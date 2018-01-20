@@ -1,6 +1,20 @@
 
 import { Component } from '@angular/core';
 
+interface IBook {
+  
+    bookAuthor: string;
+    bookTitle: string;
+    bookPrice: number;
+    booksInStock: number;
+    bookDescription: string;
+    publishedOn: Date;
+    inStock: string;
+    bookReviews:  number;
+    bookImageUrl: string;
+
+}
+
 @Component({
     moduleId: module.id,
     selector: 'bs-books-list',
