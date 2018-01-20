@@ -11,7 +11,6 @@ export class BooksListComponent {
     imageWidth: number = 100;
     showImage: boolean = true;
     booksInStock: number = 2;
-
     books: any[]= [{
     bookAuthor: "Tom Jones",
     bookTitle: "War and Peace 2",
