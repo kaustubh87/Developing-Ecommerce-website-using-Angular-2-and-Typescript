@@ -1,7 +1,8 @@
 
 import { Component } from '@angular/core';
 
-interface IBook {
+import { IBook } from '../book';
+/*interface IBook {
   
     bookAuthor: string;
     bookTitle: string;
@@ -15,6 +16,7 @@ interface IBook {
     hardcover?:boolean;
 
 }
+*/
 
 @Component({
     moduleId: module.id,
