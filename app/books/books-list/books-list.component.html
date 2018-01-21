@@ -1,21 +1,18 @@
 <div class="container">
     <section id="products">
       <div class="container">
-        <h2>{{showMessage}}</h2>
+        <h2>{{favoriteMessage}}</h2>
       </div>
     <div class="row">
         <div class="col-md-4" *ngFor ="let book of books">
-            <bs-favorite 
-            
-              [reviews] ="book.bookReviews"
-              (notify)="onNotifyClicked($event)"></bs-favorite>
+
               
             <div class="thumbnail">
               <img [src]="book.bookImageUrl" [style.width.px]="imageWidth" *ngIf='showImage'>
               <button class="btn btn-primary" (click)= "toggleImage()">Toggle Image</button>
               <div [ngClass]= "{'redClass': showImage, 'yellowClass': !showImage}">ngClass Test</div>
               <div class="caption">
-                <button class="btn btn-warning"(click)="changeMethod()">Click Method</button>
+               
                 <h4 class="pull-right">
                   {{book.bookPrice | currency: 'USD': true}}  
                 </h4>
@@ -31,6 +28,13 @@
                   <p class="pull-right">{{book.bookReviews}} Reviews</p>
                   <div class="clearfix"></div>
                   <p class="text-success" *ngIf="booksInStock > 0">Number in Stock {{book.booksInStock}}</p>
+                  <bs-favorite 
+            
+                  [reviews] ="book.bookReviews"
+                  [favorite]="book.bookTitle"
+                  (favoriteClicked)="onFavoriteClicked($event)"
+                  >
+                </bs-favorite>
                 </div>
               </div>
             </div>

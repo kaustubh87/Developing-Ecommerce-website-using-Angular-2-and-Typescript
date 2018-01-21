@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
 
 export class BooksListComponent {
 
-    showMessage: string = 'test';
+    favoriteMessage: string = '';
 
     imageWidth: number = 100;
     showImage: boolean = true;
@@ -31,14 +31,29 @@ export class BooksListComponent {
     inStock: 'yes',
     bookReviews:  15,
     bookImageUrl: "app/assets/images/656.jpg"
-    }]
+    },
+    {
+        author: "Mike Jones",
+        bookTitle: "War and Peace 3",
+        bookPrice: 19.95,
+        booksInStock: 18,
+        bookDescription: "Book of fiction",
+        publishedOn: new Date('02/11/1921'),
+        inStock: 'yes',
+        bookReviews:  15,
+        bookImageUrl: "app/assets/images/656.jpg"
+        }
+]
+
+onFavoriteClicked(message: string):void {
+    this.favoriteMessage = message;
+}
     
     toggleImage(): void{
         this.showImage = !this.showImage;
     }
 
-    onNotifyClicked(message: string):void {
-        this.showMessage = message;
-    }
+
+
 
 }

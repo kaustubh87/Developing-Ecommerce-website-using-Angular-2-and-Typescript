@@ -10,7 +10,7 @@ var core_1 = require("@angular/core");
 //import { IBook } from '../book';
 var BooksListComponent = (function () {
     function BooksListComponent() {
-        this.showMessage = 'test';
+        this.favoriteMessage = '';
         this.imageWidth = 100;
         this.showImage = true;
         this.booksInStock = 2;
@@ -24,13 +24,25 @@ var BooksListComponent = (function () {
                 inStock: 'yes',
                 bookReviews: 15,
                 bookImageUrl: "app/assets/images/656.jpg"
-            }];
+            },
+            {
+                author: "Mike Jones",
+                bookTitle: "War and Peace 3",
+                bookPrice: 19.95,
+                booksInStock: 18,
+                bookDescription: "Book of fiction",
+                publishedOn: new Date('02/11/1921'),
+                inStock: 'yes',
+                bookReviews: 15,
+                bookImageUrl: "app/assets/images/656.jpg"
+            }
+        ];
     }
+    BooksListComponent.prototype.onFavoriteClicked = function (message) {
+        this.favoriteMessage = message;
+    };
     BooksListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
-    };
-    BooksListComponent.prototype.onNotifyClicked = function (message) {
-        this.showMessage = message;
     };
     return BooksListComponent;
 }());
