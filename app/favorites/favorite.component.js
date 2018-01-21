@@ -11,13 +11,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var FavoriteComponent = (function () {
     function FavoriteComponent() {
+        this.notify = new core_1.EventEmitter();
     }
+    FavoriteComponent.prototype.onClick = function () {
+        this.notify.emit('Message from child');
+    };
     return FavoriteComponent;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", Number)
 ], FavoriteComponent.prototype, "reviews", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], FavoriteComponent.prototype, "notify", void 0);
 FavoriteComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

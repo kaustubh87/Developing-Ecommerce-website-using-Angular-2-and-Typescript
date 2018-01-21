@@ -1,3 +1,4 @@
+//import { Component, OnInit , OnChanges} from '@angular/core';
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9,7 +10,7 @@ var core_1 = require("@angular/core");
 //import { IBook } from '../book';
 var BooksListComponent = (function () {
     function BooksListComponent() {
-        this.animals = ['zebra', 'moose'];
+        this.showMessage = 'test';
         this.imageWidth = 100;
         this.showImage = true;
         this.booksInStock = 2;
@@ -25,18 +26,11 @@ var BooksListComponent = (function () {
                 bookImageUrl: "app/assets/images/656.jpg"
             }];
     }
-    BooksListComponent.prototype.ngOnInit = function () {
-        console.log('Init', this.booksInStock);
-    };
-    BooksListComponent.prototype.ngOnChanges = function () {
-        console.log('new changed detected');
-    };
-    BooksListComponent.prototype.changeMethod = function () {
-        this.animals = ['dog', 'cat'];
-        console.log('change method happened', this.animals);
-    };
     BooksListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
+    };
+    BooksListComponent.prototype.onNotifyClicked = function (message) {
+        this.showMessage = message;
     };
     return BooksListComponent;
 }());

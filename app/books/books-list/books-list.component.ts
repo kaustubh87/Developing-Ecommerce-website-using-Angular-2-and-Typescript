@@ -1,5 +1,7 @@
 
-import { Component, OnInit , OnChanges} from '@angular/core';
+//import { Component, OnInit , OnChanges} from '@angular/core';
+
+import { Component } from '@angular/core';
 
 //import { IBook } from '../book';
 
@@ -10,23 +12,10 @@ import { Component, OnInit , OnChanges} from '@angular/core';
     templateUrl: '../books-list/books-list.component.html'
 })
 
-export class BooksListComponent implements OnInit, OnChanges {
+export class BooksListComponent {
 
-    ngOnInit(){
-        console.log('Init', this.booksInStock);
-    }
+    showMessage: string = 'test';
 
-    ngOnChanges(){
-        console.log('new changed detected');
-
-    }
-
-    changeMethod(): void {
-        this.animals = ['dog', 'cat'];
-        console.log('change method happened', this.animals);
-    }
-
-    animals: string[] = ['zebra', 'moose'];
     imageWidth: number = 100;
     showImage: boolean = true;
     booksInStock: number = 2;
@@ -46,6 +35,10 @@ export class BooksListComponent implements OnInit, OnChanges {
     
     toggleImage(): void{
         this.showImage = !this.showImage;
+    }
+
+    onNotifyClicked(message: string):void {
+        this.showMessage = message;
     }
 
 }
