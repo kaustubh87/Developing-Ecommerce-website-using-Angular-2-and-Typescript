@@ -7,6 +7,7 @@
               <button class="btn btn-primary" (click)= "toggleImage()">Toggle Image</button>
               <div [ngClass]= "{'redClass': showImage, 'yellowClass': !showImage}">ngClass Test</div>
               <div class="caption">
+                <button class="btn btn-warning"(click)="changeMethod()">Click Method</button>
                 <h4 class="pull-right">
                   {{book.bookPrice | currency: 'USD': true}}  
                 </h4>

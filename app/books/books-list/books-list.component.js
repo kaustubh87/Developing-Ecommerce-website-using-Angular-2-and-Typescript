@@ -6,28 +6,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-/*interface IBook {
-  
-    bookAuthor: string;
-    bookTitle: string;
-    bookPrice: number;
-    booksInStock: number;
-    bookDescription: string;
-    publishedOn: Date;
-    inStock: string;
-    bookReviews:  number;
-    bookImageUrl: string;
-    hardcover?:boolean;
-
-}
-*/
+//import { IBook } from '../book';
 var BooksListComponent = (function () {
     function BooksListComponent() {
+        this.animals = ['zebra', 'moose'];
         this.imageWidth = 100;
         this.showImage = true;
         this.booksInStock = 2;
         this.books = [{
-                bookAuthor: "Tom Jones",
+                author: "Tom Jones",
                 bookTitle: "War and Peace 2",
                 bookPrice: 29.95,
                 booksInStock: 15,
@@ -38,6 +25,16 @@ var BooksListComponent = (function () {
                 bookImageUrl: "app/assets/images/656.jpg"
             }];
     }
+    BooksListComponent.prototype.ngOnInit = function () {
+        console.log('Init', this.booksInStock);
+    };
+    BooksListComponent.prototype.ngOnChanges = function () {
+        console.log('new changed detected');
+    };
+    BooksListComponent.prototype.changeMethod = function () {
+        this.animals = ['dog', 'cat'];
+        console.log('change method happened', this.animals);
+    };
     BooksListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
     };
