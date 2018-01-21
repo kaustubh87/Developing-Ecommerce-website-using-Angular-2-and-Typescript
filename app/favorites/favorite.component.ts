@@ -9,12 +9,23 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class FavoriteComponent{
-
+    fave: boolean = false;
+    @Input() favorite: string;
     @Input() reviews: number;
-    @Output() notify : EventEmitter<string> = new EventEmitter<string>();
+    @Output() favoriteClicked : EventEmitter<string> = new EventEmitter<string>();
 
     onClick(): void {
-        this.notify.emit('Message from child');
+        this.favoriteClicked.emit(`The favorite ${this.favorite} was saved`);
+        this.fave = !this.fave;
+    }
+
+    isSelected(fave: boolean): boolean {
+        if(!fave || !this.fave){
+            return false;
+        }
+        if(fave){
+            return true;
+        }
     }
 
 }
