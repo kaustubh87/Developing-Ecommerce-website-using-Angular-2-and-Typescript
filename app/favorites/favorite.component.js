@@ -11,13 +11,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var FavoriteComponent = (function () {
     function FavoriteComponent() {
-        this.notify = new core_1.EventEmitter();
+        this.fave = false;
+        this.favoriteClicked = new core_1.EventEmitter();
     }
     FavoriteComponent.prototype.onClick = function () {
-        this.notify.emit('Message from child');
+        this.favoriteClicked.emit("The favorite " + this.favorite + " was saved");
+        this.fave = !this.fave;
+    };
+    FavoriteComponent.prototype.isSelected = function (fave) {
+        if (!fave || !this.fave) {
+            return false;
+        }
+        if (fave) {
+            return true;
+        }
     };
     return FavoriteComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], FavoriteComponent.prototype, "favorite", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", Number)
@@ -25,7 +39,7 @@ __decorate([
 __decorate([
     core_1.Output(),
     __metadata("design:type", core_1.EventEmitter)
-], FavoriteComponent.prototype, "notify", void 0);
+], FavoriteComponent.prototype, "favoriteClicked", void 0);
 FavoriteComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
