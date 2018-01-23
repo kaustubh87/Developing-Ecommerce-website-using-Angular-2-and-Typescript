@@ -6,4 +6,30 @@ import { IBook } from './book';
 @Injectable()
 export class BookService{
 
+    getBooks(): IBook[]{
+
+        return [
+            {
+                bookAuthor: "Tom Jones",
+                bookTitle: "War and Peace 2",
+                bookPrice: 29.95,
+                bookDescription: "Book of fiction",
+                publishedOn: new Date('02/11/1921'),
+                inStock: 'yes',
+                bookReviews: 15,
+                bookImageUrl: "app/assets/images/656.jpg"
+            },
+            {
+                bookAuthor: "Mike Jones",
+                bookTitle: "War and Peace 3",
+                bookPrice: 19.95,
+                bookDescription: "Book of fiction",
+                publishedOn: new Date('02/11/1921'),
+                inStock: 'yes',
+                bookReviews: 15,
+                bookImageUrl: "app/assets/images/656.jpg"
+            }
+        ]
+    }
+
 }
