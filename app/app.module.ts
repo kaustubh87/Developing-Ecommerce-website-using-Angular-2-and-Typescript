@@ -6,11 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from './shared/highlight.directive';
 import {TruncatePipe} from './shared/pipes/truncate.pipe';
 import { FavoriteComponent } from './favorites/favorite.component';
+import { BookService } from './books/book.service';
+
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, BooksListComponent, HighlightDirective, TruncatePipe, FavoriteComponent],
-  bootstrap:    [ AppComponent]
+  bootstrap:    [ AppComponent],
+  providers: [BookService]
 })
 
 export class AppModule { }
