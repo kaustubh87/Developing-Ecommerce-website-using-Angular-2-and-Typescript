@@ -2,6 +2,8 @@
 //import { Component, OnInit , OnChanges} from '@angular/core';
 
 import { Component } from '@angular/core';
+import { IBook } from '../book';
+import { BookService } from '../book.service';
 
 //import { IBook } from '../book';
 
@@ -14,14 +16,19 @@ import { Component } from '@angular/core';
 
 export class BooksListComponent {
 
+    books: IBook[];
     favoriteMessage: string = '';
 
     imageWidth: number = 100;
     showImage: boolean = true;
     booksInStock: number = 2;
 
+    constructor(private bookService: BookService){
+        this.books = bookService.getBooks();
+    }
 
-    books: any[]= [{
+
+    /*books: any[]= [{
     author: "Tom Jones",
     bookTitle: "War and Peace 2",
     bookPrice: 29.95,
@@ -44,6 +51,7 @@ export class BooksListComponent {
         bookImageUrl: "app/assets/images/656.jpg"
         }
 ]
+*/
 
 onFavoriteClicked(message: string):void {
     this.favoriteMessage = message;
