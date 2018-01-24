@@ -20,7 +20,7 @@ var BookService = (function () {
         this._http = _http;
     }
     BookService.prototype.getBooks = function () {
-        return this._http.get('api/books/bookss.json')
+        return this._http.get('api/books/books.json')
             .map(function (response) { return response.json(); })
             .do(function (data) { return console.log(data); })
             .catch(this.handleError);
