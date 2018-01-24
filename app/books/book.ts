@@ -1,4 +1,4 @@
-/*export interface IBook{
+export interface IBook{
     id: string;
     name: string;
     productCode: string;
@@ -13,8 +13,9 @@
     imageUrl: string;
 
 }
-*/
 
+
+/*
 export interface IBook{
     bookTitle: string;
     bookAuthor: string;
@@ -28,3 +29,4 @@ export interface IBook{
     bookReviews: number;
     bookImageUrl: string;
 }
+*/
