@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
+var http_1 = require("@angular/http");
 var books_list_component_1 = require("./books/books-list/books-list.component");
 var forms_1 = require("@angular/forms");
 var highlight_directive_1 = require("./shared/highlight.directive");
@@ -21,7 +22,7 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
         declarations: [app_component_1.AppComponent, books_list_component_1.BooksListComponent, highlight_directive_1.HighlightDirective, truncate_pipe_1.TruncatePipe, favorite_component_1.FavoriteComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [book_service_1.BookService]
