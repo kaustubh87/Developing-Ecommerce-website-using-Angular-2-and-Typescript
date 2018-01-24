@@ -8,10 +8,17 @@ import { HighlightDirective } from './shared/highlight.directive';
 import {TruncatePipe} from './shared/pipes/truncate.pipe';
 import { FavoriteComponent } from './favorites/favorite.component';
 import { BookService } from './books/book.service';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpModule ],
+  imports:      [ BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(
+    [
+      {path: 'books', component:BooksListComponent},
+      { path: "", redirectTo:'books', pathMatch: 'full'},
+      { path: '**', redirectTo:'books', pathMatch:'full'}
+    ]
+  )],
   declarations: [ AppComponent, BooksListComponent, HighlightDirective, TruncatePipe, FavoriteComponent],
   bootstrap:    [ AppComponent],
   providers: [BookService]
