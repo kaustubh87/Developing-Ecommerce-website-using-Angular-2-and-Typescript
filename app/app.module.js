@@ -16,6 +16,7 @@ var truncate_pipe_1 = require("./shared/pipes/truncate.pipe");
 var favorite_component_1 = require("./favorites/favorite.component");
 var book_service_1 = require("./books/book.service");
 var router_1 = require("@angular/router");
+var home_component_1 = require("./home/home.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,7 +29,8 @@ AppModule = __decorate([
                 { path: "", redirectTo: 'books', pathMatch: 'full' },
                 { path: '**', redirectTo: 'books', pathMatch: 'full' }
             ])],
-        declarations: [app_component_1.AppComponent, books_list_component_1.BooksListComponent, highlight_directive_1.HighlightDirective, truncate_pipe_1.TruncatePipe, favorite_component_1.FavoriteComponent],
+        declarations: [app_component_1.AppComponent, books_list_component_1.BooksListComponent, highlight_directive_1.HighlightDirective, truncate_pipe_1.TruncatePipe,
+            favorite_component_1.FavoriteComponent, home_component_1.HomeComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [book_service_1.BookService]
     })
