@@ -11,7 +11,7 @@
     "inStock" : true,
     "price" : 19.95,
     "starRating": 4.11,
-    "imageUrl": "assets/images/656.png"
+    "imageUrl": "app/assets/images/656.jpg"
   },
   {
     "id" : "2",
@@ -25,7 +25,7 @@
     "inStock" : true,
     "price" : 14.95,
     "starRating": 4.23,
-    "imageUrl": "assets/images/5907.png"
+    "imageUrl": "app/assets/images/5907.jpg"
   },
   {
     "id" : "3",
@@ -39,7 +39,7 @@
     "inStock" : true,
     "price" : 9.95,
     "starRating": 3.87,
-    "imageUrl": "assets/images/107291.png"
+    "imageUrl": "app/assets/images/107291.jpg"
   },
   {
     "id" : "4",
@@ -53,7 +53,7 @@
     "inStock" : true,
     "price" : 8.95,
     "starRating": 4.24,
-    "imageUrl": "assets/images/2657.png"
+    "imageUrl": "app/assets/images/2657.jpg"
   },
   {
     "id" : "5",
@@ -67,7 +67,7 @@
     "inStock" : true,
     "price" : 11.95,
     "starRating": 3.75,
-    "imageUrl": "assets/images/16213.png"
+    "imageUrl": "app/assets/images/16213.jpg"
   },
   {
     "id" : "6",
@@ -81,6 +81,6 @@
     "inStock" : true,
     "price" : 14.95,
     "starRating": 4.12,
-    "imageUrl": "assets/images/2095.png"
+    "imageUrl": "app/assets/images/2095.jpg"
   }
 ]
