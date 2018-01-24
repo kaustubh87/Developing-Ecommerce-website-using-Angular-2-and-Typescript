@@ -9,17 +9,20 @@ import {TruncatePipe} from './shared/pipes/truncate.pipe';
 import { FavoriteComponent } from './favorites/favorite.component';
 import { BookService } from './books/book.service';
 import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(
     [
       {path: 'books', component:BooksListComponent},
-      { path: "", redirectTo:'books', pathMatch: 'full'},
-      { path: '**', redirectTo:'books', pathMatch:'full'}
+      {path: 'home', component: HomeComponent},
+      { path: "", redirectTo:'home', pathMatch: 'full'},
+      { path: '**', redirectTo:'home', pathMatch:'full'}
     ]
   )],
-  declarations: [ AppComponent, BooksListComponent, HighlightDirective, TruncatePipe, FavoriteComponent],
+  declarations: [ AppComponent, BooksListComponent, HighlightDirective, TruncatePipe, 
+    FavoriteComponent, HomeComponent],
   bootstrap:    [ AppComponent],
   providers: [BookService]
 })
