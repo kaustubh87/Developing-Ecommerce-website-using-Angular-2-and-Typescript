@@ -13,14 +13,21 @@ var core_1 = require("@angular/core");
 var book_service_1 = require("../book.service");
 //import { IBook } from '../book';
 var BooksListComponent = (function () {
-    function BooksListComponent(bookService) {
-        this.bookService = bookService;
+    function BooksListComponent(_bookService) {
+        this._bookService = _bookService;
         this.favoriteMessage = '';
         this.imageWidth = 100;
         this.showImage = true;
         this.booksInStock = 2;
-        this.books = bookService.getBooks();
     }
+    BooksListComponent.prototype.ngOnInit = function () {
+        this.getBooks();
+    };
+    BooksListComponent.prototype.getBooks = function () {
+        var _this = this;
+        this._bookService.getBooks()
+            .subscribe(function (response) { return _this.books = response; }, function (error) { return _this.errorMessage = error; });
+    };
     /*books: any[]= [{
     author: "Tom Jones",
     bookTitle: "War and Peace 2",

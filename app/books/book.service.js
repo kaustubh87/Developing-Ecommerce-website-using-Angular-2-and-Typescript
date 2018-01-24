@@ -5,38 +5,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
 var BookService = (function () {
-    function BookService() {
+    function BookService(_http) {
+        this._http = _http;
     }
     BookService.prototype.getBooks = function () {
-        return [
-            {
-                bookAuthor: "Tom Jones",
-                bookTitle: "War and Peace 2",
-                bookPrice: 29.95,
-                bookDescription: "Book of fiction",
-                publishedOn: new Date('02/11/1921'),
-                inStock: 'yes',
-                bookReviews: 15,
-                bookImageUrl: "app/assets/images/656.jpg"
-            },
-            {
-                bookAuthor: "Mike Jones",
-                bookTitle: "War and Peace 3",
-                bookPrice: 19.95,
-                bookDescription: "Book of fiction",
-                publishedOn: new Date('02/11/1921'),
-                inStock: 'yes',
-                bookReviews: 15,
-                bookImageUrl: "app/assets/images/656.jpg"
-            }
-        ];
+        return this._http.get('api/books/books.json')
+            .map(function (response) { return response.json(); });
     };
     return BookService;
 }());
 BookService = __decorate([
-    core_1.Injectable()
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
 ], BookService);
 exports.BookService = BookService;
 //# sourceMappingURL=book.service.js.map
