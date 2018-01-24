@@ -10,14 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/map");
+require("rxjs/add/observable/throw");
+require("rxjs/add/operator/do");
+require("rxjs/add/operator/catch");
 var BookService = (function () {
     function BookService(_http) {
         this._http = _http;
     }
     BookService.prototype.getBooks = function () {
-        return this._http.get('api/books/books.json')
-            .map(function (response) { return response.json(); });
+        return this._http.get('api/books/bookss.json')
+            .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log(data); })
+            .catch(this.handleError);
+    };
+    BookService.prototype.handleError = function (error) {
+        console.error(error);
+        var message = "Error status code " + error.status + " at " + error.url;
+        return Observable_1.Observable.throw(message);
     };
     return BookService;
 }());
