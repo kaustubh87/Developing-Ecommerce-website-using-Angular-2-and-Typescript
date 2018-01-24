@@ -13,6 +13,7 @@ var HomeComponent = (function () {
 }());
 HomeComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'home-component',
         templateUrl: './home.component.html'
     })

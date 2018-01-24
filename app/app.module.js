@@ -26,8 +26,9 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, router_1.RouterModule.forRoot([
                 { path: 'books', component: books_list_component_1.BooksListComponent },
-                { path: "", redirectTo: 'books', pathMatch: 'full' },
-                { path: '**', redirectTo: 'books', pathMatch: 'full' }
+                { path: 'home', component: home_component_1.HomeComponent },
+                { path: "", redirectTo: 'home', pathMatch: 'full' },
+                { path: '**', redirectTo: 'home', pathMatch: 'full' }
             ])],
         declarations: [app_component_1.AppComponent, books_list_component_1.BooksListComponent, highlight_directive_1.HighlightDirective, truncate_pipe_1.TruncatePipe,
             favorite_component_1.FavoriteComponent, home_component_1.HomeComponent],
