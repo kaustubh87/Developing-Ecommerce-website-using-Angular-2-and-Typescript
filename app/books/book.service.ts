@@ -16,7 +16,7 @@ export class BookService{
 
     getBooks(): Observable<IBook[]>{
 
-        return this._http.get('api/books/bookss.json')
+        return this._http.get('api/books/books.json')
         .map((response: Response) => <IBook[]> response.json())
         .do(data => console.log(data))
         .catch(this.handleError);
