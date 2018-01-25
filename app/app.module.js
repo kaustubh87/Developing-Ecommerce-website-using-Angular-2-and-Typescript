@@ -17,6 +17,7 @@ var favorite_component_1 = require("./favorites/favorite.component");
 var book_service_1 = require("./books/book.service");
 var router_1 = require("@angular/router");
 var home_component_1 = require("./home/home.component");
+var books_details_component_1 = require("./books/books-details/books-details.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,11 +28,12 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, router_1.RouterModule.forRoot([
                 { path: 'books', component: books_list_component_1.BooksListComponent },
                 { path: 'home', component: home_component_1.HomeComponent },
+                { path: 'book/:id', component: books_details_component_1.BookDetailsComponent },
                 { path: "", redirectTo: 'home', pathMatch: 'full' },
                 { path: '**', redirectTo: 'home', pathMatch: 'full' }
             ])],
         declarations: [app_component_1.AppComponent, books_list_component_1.BooksListComponent, highlight_directive_1.HighlightDirective, truncate_pipe_1.TruncatePipe,
-            favorite_component_1.FavoriteComponent, home_component_1.HomeComponent],
+            favorite_component_1.FavoriteComponent, home_component_1.HomeComponent, books_details_component_1.BookDetailsComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [book_service_1.BookService]
     })
