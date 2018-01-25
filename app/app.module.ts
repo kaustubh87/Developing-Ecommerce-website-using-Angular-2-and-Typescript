@@ -10,6 +10,7 @@ import { FavoriteComponent } from './favorites/favorite.component';
 import { BookService } from './books/book.service';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import {BookDetailsComponent} from './books/books-details/books-details.component';
 
 
 @NgModule({
@@ -17,12 +18,13 @@ import { HomeComponent } from './home/home.component';
     [
       {path: 'books', component:BooksListComponent},
       {path: 'home', component: HomeComponent},
+      {path: 'book/:id', component: BookDetailsComponent},
       { path: "", redirectTo:'home', pathMatch: 'full'},
       { path: '**', redirectTo:'home', pathMatch:'full'}
     ]
   )],
   declarations: [ AppComponent, BooksListComponent, HighlightDirective, TruncatePipe, 
-    FavoriteComponent, HomeComponent],
+    FavoriteComponent, HomeComponent, BookDetailsComponent],
   bootstrap:    [ AppComponent],
   providers: [BookService]
 })
